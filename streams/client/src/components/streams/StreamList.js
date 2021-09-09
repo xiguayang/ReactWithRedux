@@ -24,7 +24,6 @@ class StreamList extends React.Component {
 			);
 		}
 	}
-
 	renderCreate() {
 		if (this.props.isSignedIn) {
 			return (
@@ -39,6 +38,10 @@ class StreamList extends React.Component {
 
 	renderList() {
 		return this.props.streams.map((stream) => {
+			//filter with only user created streams
+			// if (this.props.currentUserId !== stream.userId) {
+			// 	return null;
+			// }
 			return (
 				<div className="item" key={stream.id}>
 					{this.renderAdmin(stream)}
